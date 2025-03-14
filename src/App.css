@@ -482,3 +482,273 @@ position: relative;
   font-size: 0.8em;
   opacity: 0.7;
 }
+
+/*-----------------HABILITIES----------------*/
+
+.abilities{
+  height: 80vh;
+  padding: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--primary-color);
+  color: var(--third-color);
+}
+
+.title_abilities{
+  text-transform: uppercase;
+  font-size: 50px;
+}
+
+.title_abilities span{
+  color: var(--secondary-color);
+}
+
+.habilities_images{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 4%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cards{
+  margin: 2%;
+}
+
+/*/////////// RECTANGLE ////////////*/
+
+.retan{
+  width: 150px;
+  height: 90px;
+  border-radius: 100px;
+  background-color: var(--third-color);
+  margin-right: 2%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(-30deg);
+}
+
+.retan:hover{
+  width: 200px;
+  height: 95px;  
+  transform: rotate(0deg);
+  background: linear-gradient(45deg, #e94326, #e9264a, #eb0f0f, #e9264a, #e95c26);
+  background-size: 1200px 400px;
+  animation: degrade 10s linear infinite alternate;
+  transition: 0.3s;
+}
+
+/*/////////// HEXAGON ////////////*/
+
+.hexa {
+  width: 100px;
+  height: 57.75px;
+  border-radius: 2px;
+  background-color: var(--third-color);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 2%;
+  transform: rotate(10deg);
+}
+
+.hexa:before {
+  content: "";
+  position: absolute;
+  top: -28.87px;
+  left: 0;
+  width: 100px;
+  height: 30px;
+  background: var(--third-color);
+  background-size: 1200px 400px;
+  clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+}
+
+
+.hexa:after {
+  content: "";
+  position: absolute;
+  bottom: -28.87px;
+  left: 0;
+  width: 100px;
+  height: 30px;
+  background: var(--third-color);
+  clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
+  z-index: 0;
+}
+
+
+.hexa:hover {
+  width: 150px;
+  height: 62.75px;
+  transform: rotate(0deg);
+  background: linear-gradient(45deg, #e94326, #e9264a, #eb0f0f, #e9264a, #e95c26);
+  background-size: 1200px 400px;
+  animation: degrade 10s linear infinite alternate;
+  transition: 0.3s;
+}
+
+.hexa:hover:before{
+  top: -45.87px;
+  left: 0;
+  width: 150px;
+  height: 45.8px;
+  background: linear-gradient(45deg, #e94326, #e9264a, #eb0f0f, #e9264a, #e95c26);
+  background-size: 1200px 400px;
+  clip-path: polygon(50% 0%, 100% 100%, 0% 100%); 
+  animation: degrade 10s linear infinite alternate;
+  transition: 0.3s;
+}
+
+.hexa:hover:after{
+  bottom: -45.87px;
+  left: 0;
+  width: 150px;
+  height: 45.8px;
+  background: linear-gradient(45deg, #e94326, #e9264a, #eb0f0f, #e9264a, #e95c26);
+  background-size: 1200px 400px;
+  clip-path: polygon(0% 0%, 100% 0%, 50% 100%);  
+  animation: degrade 10s linear infinite alternate;
+  transition: 0.3s;
+}
+
+.card_logo{
+  height: 170%;
+  position: absolute;
+  z-index: 1;
+}
+
+/*/////////// STAR 8 ////////////*/
+
+.star {
+  position: relative;
+  width: 90px;
+  height: 90px;
+  padding-top: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--third-color);
+  margin: 50px;
+  transform: rotate(30deg);
+}
+
+.star::before, .star::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 90px;
+  height: 90px;
+  background-color: var(--third-color);
+}
+
+.star::before {
+  transform: rotate(90deg);
+}
+
+.star::after {
+  transform: rotate(45deg);
+}
+
+.star:hover{
+  transform: rotate(20deg);
+}
+
+.star:hover, .star:hover::after, .star:hover::before{
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(45deg, #e94326, #e9264a, #eb0f0f, #e9264a, #e95c26);
+  background-size: 1200px 400px;
+  animation: degrade 10s linear infinite alternate;
+  transition: 0.3s;
+}
+
+.star_logo{
+  height: 100%;
+  position: absolute;
+  z-index: 1;
+  transform: rotate(-20deg);
+}
+
+/*/////////// STAR 12 ////////////*/
+
+.star2 {
+  position: relative;
+  width: 90px;
+  height: 90px;
+  padding-top: 4px;  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--third-color);
+  margin: 50px;
+  transform: rotate(-10deg);
+}
+
+.star2::before, .star2::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 90px;
+  height: 90px;
+  background-color: var(--third-color);
+}
+
+.star2::before {
+  transform: rotate(120deg);
+}
+
+.star2::after {
+  transform: rotate(60deg);
+}
+
+.star2:hover{
+  transform: rotate(0deg);
+}
+
+.star2:hover, .star2:hover::after, .star2:hover::before{
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(45deg, #e94326, #e9264a, #eb0f0f, #e9264a, #e95c26);
+  background-size: 1200px 400px;
+  animation: degrade 10s linear infinite alternate;
+  transition: 0.3s;
+}
+
+.star2_logo{
+  height: 100%;
+  position: absolute;
+  z-index: 1;
+}
+
+/*/////////////// SQUARE /////////////////*/
+
+.square{
+  width: 100px;
+  height: 100px;  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 25px;
+  background: var(--third-color);
+  transform: rotate(10deg);
+}
+
+.square:hover{
+  width: 130px;
+  height: 130px;
+  transform: rotate(0deg);
+  background: linear-gradient(45deg, #e94326, #e9264a, #eb0f0f, #e9264a, #e95c26);
+  background-size: 1200px 400px;
+  animation: degrade 10s linear infinite alternate;
+  transition: 0.3s;
+}

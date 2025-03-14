@@ -5,6 +5,7 @@ import Skills from './components/Skills';
 import Projects from './components/Projects';
 import Contacts from './components/Contacts';
 import Experience from './components/Experience';
+import Skills2 from './components/Skills2';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <NavBar/>
       <Home/>
       <Skills/>
+      <Skills2/>
       <Experience/>
       <Projects/>
       <Contacts />
