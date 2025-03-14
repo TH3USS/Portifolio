@@ -10,65 +10,79 @@ const Projects = () => {
       des: 'O software consiste em uma forma de gameficação dos conceitos de Dimensionamento de Frota com o objetivo de levar os alunos do curso de logística a porem em pratica os conhecimentos adquiridos em relação a matéria.',
       mission: 'Análise e design do sistema, desenvolvimento back-end e front-end e implementação de banco de dados.',
       language: '.NET C#, .NET CORE, ASP.NET, Windows Forms e MySql como banco de dados.',
-      images: process.env.PUBLIC_URL + '/ProjetoDMF.png'
+      images: process.env.PUBLIC_URL + '/ProjetoDMF.png',
+      type: 'frontend'
     },
     {
       name: "Software de Gerenciamento de Riscos",
       des: 'Software de gerenciamento de riscos para empresas, com o objetivo de prover ferramentas de análises de risco, planos de ação, controle de riscos...',
       mission: 'Desenvolvimento back-end e front-end, otimização do software e implementação de novas funcionalidades.',
       language: '.NET C#, .NET Core, ASP.NET MVC, HTML, CSS, JavaScript e SQL Server como banco de dados,...',
-      images: process.env.PUBLIC_URL + '/ProjetoGestão.png'
+      images: process.env.PUBLIC_URL + '/ProjetoGestão.png',
+      type: 'backend'
     },
     {
       name: "Software para Gestão de Biblioteca",
       des: 'Esta é uma aplicação web pra controle de empréstimo de livros, na aplicação é possível cadastrar um livro e a quantidade disponível dele e cadastrar um empréstimo do mesmo de acordo com o numero de livros disponíveis.',
       mission: 'Análise e design do sistema, desenvolvimento back-end e front-end e implementação de banco de dados.',
       language: 'ASP.NET MVC, .NET C#, HTML, CSS, Bootstrap, JavaScript e  SQL Server como anco de dados.',
-      images: process.env.PUBLIC_URL + '/ProjetoBiblioteca.png'
+      images: process.env.PUBLIC_URL + '/ProjetoBiblioteca.png',
+      type: 'backend'
     },
     {
       name: "Aplicação web para controle de gastos",
       des: 'Este é um projeto de uma aplicação de controle de gastos, onde pode-se fazer a entrada dos gastos realizados e da receita ganha, a aplicação faz as contas do saldo final, mostrando se foi positivo ou negativo, e disponibilizando um gráfico pizza e um gráfico de linhas para a consulta.',
       mission: 'Análise e design do sistema, desenvolvimento back-end e front-end e implementação de banco de dados.',
       language: 'ASP.NET MVC, .NET C#, HTML, CSS, JavaScript e  SQL Server como anco de dados.',
-      images: process.env.PUBLIC_URL + '/ProjetoGastos.png'
+      images: process.env.PUBLIC_URL + '/ProjetoGastos.png',
+      type: 'backend'
     },
     {
       name: "Calculadora de IMC",
       des: 'Esta é uma aplicação web de uma calculadora de IMC.',
       mission: 'Desenvolvimento back-end e front-end.',
       language: 'ASP.NET MVC, .NET C#, HTML, CSS e JavaScript.',
-      images: process.env.PUBLIC_URL + '/ProjetoIMC.png'
+      images: process.env.PUBLIC_URL + '/ProjetoIMC.png',
+      type: 'backend'
     },
     {
       name: "Conversor de Moedas",
       des: 'Esta é uma aplicação web de um conversor de moeda.',
       mission: 'Desenvolvimento back-end e front-end.',
       language: 'ASP.NET MVC, .NET C#, HTML, CSS e JavaScript.',
-      images: process.env.PUBLIC_URL + '/ProjetoMoeda.png'
+      images: process.env.PUBLIC_URL + '/ProjetoMoeda.png',
+      type: 'backend'
     },
     {
       name: "Gerador de Senhas",
       des: 'Esta é uma aplicação web de um gerador de senhas.',
       mission: 'Desenvolvimento back-end e front-end.',
       language: 'ASP.NET MVC, .NET C#, HTML, CSS e JavaScript.',
-      images: process.env.PUBLIC_URL + '/ProjetoSenha.png'
+      images: process.env.PUBLIC_URL + '/ProjetoSenha.png',
+      type: 'backend'
     },
     {
       name: "Simulador de Juros Compostos",
       des: 'Esta é uma aplicação web de um simulador de juros compostos.',
       mission: 'Desenvolvimento back-end e front-end.',
       language: 'ASP.NET MVC, .NET C#, HTML, CSS e JavaScript.',
-      images: process.env.PUBLIC_URL + '/ProjetoJuros.png'
+      images: process.env.PUBLIC_URL + '/ProjetoJuros.png',
+      type: 'backend'
     },
     {
       name: "Portal de Publicações",
       des: 'Esta é uma aplicação web de um Portal de Publicações, na aplicação é possível fazer e visualizar publicações.',
       mission: 'Análise e design do sistema, desenvolvimento back-end e front-end e implementação de banco de dados',
       language: 'ASP.NET MVC, .NET C#, HTML, CSS, JavaScript e  SQL Server como anco de dados.',
-      images: process.env.PUBLIC_URL + 'Cfundo.png'
+      images: process.env.PUBLIC_URL + 'Cfundo.png',
+      type: 'backend'
     }
   ]);
+
+  const filteredProjects = listProjects.filter(project =>
+    category === 'all' || project.type === category
+  );
+
   const refTab = useRef(null);
   const divs = useRef([]);
   CustomHook(refTab, divs);
@@ -76,6 +90,11 @@ const Projects = () => {
     <section className='projects' ref={refTab}>
       <div className='title' ref={(el) => el && divs.current.push(el)}>
         This is my Projects
+      </div>
+      <div className='buttons'>
+        <button onClick={() => setCategory('all')}>Todos</button>
+        <button onClick={() => setCategory('frontend')}>Front-End</button>
+        <button onClick={() => setCategory('backend')}>Back-End</button>
       </div>
       <div className='des' ref={(el) => el && divs.current.push(el)}>Seguem alguns dos projetos ao qual desenvolvi.</div>
       <div className='list'>
